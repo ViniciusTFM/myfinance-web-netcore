@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Vinicius\\PUC Minas\\Sistemas\\myfinance-web-netcore\\myfinance-web-netcore\\myfinance-web-netcore.csproj": {}
+  },
+  "projects": {
+    "E:\\Vinicius\\PUC Minas\\Sistemas\\myfinance-web-netcore\\myfinance-web-netcore\\myfinance-web-netcore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Vinicius\\PUC Minas\\Sistemas\\myfinance-web-netcore\\myfinance-web-netcore\\myfinance-web-netcore.csproj",
+        "projectName": "myfinance-web-netcore",
+        "projectPath": "E:\\Vinicius\\PUC Minas\\Sistemas\\myfinance-web-netcore\\myfinance-web-netcore\\myfinance-web-netcore.csproj",
+        "packagesPath": "C:\\Users\\Vinicius\\.nuget\\packages\\",
+        "outputPath": "E:\\Vinicius\\PUC Minas\\Sistemas\\myfinance-web-netcore\\myfinance-web-netcore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Vinicius\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
