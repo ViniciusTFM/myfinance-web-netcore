@@ -13,5 +13,7 @@ namespace myfinance_web_netcore.Domain.Services.Interfaces
         void Salvar(PlanoContaModel model);
 
         PlanoContaModel RetornarRegistro(int id);
+
+        void Excluir(int id);
     }
 }

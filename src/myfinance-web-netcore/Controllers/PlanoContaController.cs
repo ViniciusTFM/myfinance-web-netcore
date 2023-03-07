@@ -56,5 +56,13 @@ namespace myfinance_web_netcore.Controllers
             _planoContaService.Salvar(PlanoConta);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        [Route("Excluir/{id}")]
+        public IActionResult Excluir(int id)
+        {
+            _planoContaService.Excluir(id);
+            return RedirectToAction("Index");
+        }
     }
 }

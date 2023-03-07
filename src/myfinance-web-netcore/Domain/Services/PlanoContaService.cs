@@ -76,5 +76,17 @@ namespace myfinance_web_netcore.Domain.Services
 
             return itemPlanoConta;
         }
+
+        public void Excluir(int id)
+        {
+            /* var entidade = new PlanoConta(){
+                Id = id
+            }; */
+
+            var item = _dbcontext.PlanoConta.Where(x => x.Id == id).First();
+            _dbcontext.Attach(item);
+            _dbcontext.Remove(item);
+            _dbcontext.SaveChanges();
+        }
     }
 }

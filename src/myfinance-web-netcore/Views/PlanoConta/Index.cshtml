@@ -36,7 +36,8 @@
                             <td>@item.Id</td>
                             <td>@item.Descricao</td>
                             <td>@item.Tipo</td>
-                            <td></td>
+                            <td><button type="buttton" class="btn btn-success btn-sm" onclick="editar(@item.Id.ToString())">Editar</button></td>
+                            <td><button type="buttton" class="btn btn-danger btn-sm" onclick="excluir(@item.Id.ToString())">Excluir</button></td>
                             <td></td>
                         </tr>
 
@@ -46,3 +47,13 @@
         </table>
     </div>
 </div>
+
+<script>
+    function editar(id){
+        window.location.href = "../PlanoConta/Cadastrar/" + id;
+    }
+
+    function excluir(id){
+        window.location.href = "../PlanoConta/Excluir/" + id;
+    }
+</script>
