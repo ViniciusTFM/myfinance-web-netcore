@@ -15,11 +15,13 @@ namespace myfinance_web_netcore.Domain.Services
     {
         private readonly MyFinanceDbContext _dbcontext;
         private readonly IPlanoContaService _planoContaService;
+        private readonly LogService _logService;
 
         public TransacaoService(MyFinanceDbContext dbContext, IPlanoContaService planoContaService)
         {
             _dbcontext = dbContext;
             _planoContaService = planoContaService;
+            _logService = new LogService(_dbcontext);
         }
 
         public List<TransacaoModel> ListarRegistros()
@@ -71,6 +73,8 @@ namespace myfinance_web_netcore.Domain.Services
         {
             var dbSet = _dbcontext.Transacao;
 
+            using var transaction = _dbcontext.Database.BeginTransaction();
+
             var entidade = new Transacao()
             {
                 Id = model.Id,
@@ -83,22 +87,28 @@ namespace myfinance_web_netcore.Domain.Services
             if (entidade.Id == null)
             {
                 dbSet.Add(entidade);
+                _logService.salvarLog('I');
             }
             else
             {
                 dbSet.Attach(entidade);
                 _dbcontext.Entry(entidade).State = EntityState.Modified;
+                _logService.salvarLog('A');
             }
 
             _dbcontext.SaveChanges();
+            transaction.Commit();
         }
 
         public void Excluir(int id)
         {
+            using var transaction = _dbcontext.Database.BeginTransaction();
             var item = _dbcontext.Transacao.Where(x => x.Id == id).First();
             _dbcontext.Attach(item);
             _dbcontext.Remove(item);
+            _logService.salvarLog('E');
             _dbcontext.SaveChanges();
+            transaction.Commit();
         }
     }
 }

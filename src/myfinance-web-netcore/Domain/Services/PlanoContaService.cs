@@ -13,10 +13,12 @@ namespace myfinance_web_netcore.Domain.Services
     public class PlanoContaService : IPlanoContaService
     {
         private readonly MyFinanceDbContext _dbcontext;
+        private readonly LogService _logService;
 
         public PlanoContaService(MyFinanceDbContext dbContext)
         {
             _dbcontext = dbContext;
+            _logService = new LogService(_dbcontext);
         }
 
         public List<PlanoContaModel> ListarRegistros()
@@ -42,6 +44,7 @@ namespace myfinance_web_netcore.Domain.Services
         public void Salvar(PlanoContaModel model)
         {
             var dbSet = _dbcontext.PlanoConta;
+            using var transaction = _dbcontext.Database.BeginTransaction();
 
             var entidade = new PlanoConta()
             {
@@ -53,14 +56,17 @@ namespace myfinance_web_netcore.Domain.Services
             if (entidade.Id == null)
             {
                 dbSet.Add(entidade);
+                _logService.salvarLog('I');
             }
             else
             {
                 dbSet.Attach(entidade);
                 _dbcontext.Entry(entidade).State = EntityState.Modified;
+                _logService.salvarLog('A');
             }
 
             _dbcontext.SaveChanges();
+            transaction.Commit();
         }
 
         public PlanoContaModel RetornarRegistro(int id)
@@ -78,14 +84,16 @@ namespace myfinance_web_netcore.Domain.Services
 
         public void Excluir(int id)
         {
-            /* var entidade = new PlanoConta(){
-                Id = id
-            }; */
+            using var transaction = _dbcontext.Database.BeginTransaction();
 
             var item = _dbcontext.PlanoConta.Where(x => x.Id == id).First();
             _dbcontext.Attach(item);
             _dbcontext.Remove(item);
+
+            _logService.salvarLog('E');
+
             _dbcontext.SaveChanges();
+            transaction.Commit();
         }
     }
 }

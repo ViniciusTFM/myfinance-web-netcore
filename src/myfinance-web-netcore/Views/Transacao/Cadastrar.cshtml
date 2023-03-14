@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Item Plano Conta</label>
-            @Html.DropDownListFor(m => m.PlanoContaId, Model.PlanoConta)
+            @Html.DropDownListFor(m => m.PlanoContaId, Model.PlanoConta, new {@class="form-control"})
         </div>
         <div class="mb-3">
             <label for="txtHistorico" class="form-label">Histórico</label>

@@ -11,6 +11,7 @@ namespace myfinance_web_netcore
     {
         public DbSet<PlanoConta> PlanoConta { get; set; }
         public DbSet<Transacao> Transacao { get; set; }
+        public DbSet<myfinance_web_netcore.Models.LogModel> Log { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -60,6 +60,20 @@
     }
 
     function excluir(id){
-        window.location.href = "../Transacao/Excluir/" + id;
+
+        Swal.fire({
+        title: 'Confirme a exclusão?',
+        text: "Atenção!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Excluir',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "../Transacao/Excluir/" + id;
+            }
+        })
     }
 </script>
