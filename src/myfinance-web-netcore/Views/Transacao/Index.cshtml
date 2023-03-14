@@ -1,3 +1,4 @@
+@model TransacaoModel
 @{
     ViewData["Title"] = "index";
 }
@@ -5,11 +6,11 @@
 <div class="row">
 
     <div class="col-12">
-        <h2>Plano de Contas</h2>
+        <h2>Transações</h2>
     </div>
 
     <div class="col-12">
-        <a class="btn btn-primary" asp-area="" asp-controller="Transacao" asp-action="Cadastrar">Criar Item</a>
+        <a class="btn btn-primary" asp-area="" asp-controller="Transacao" asp-action="Cadastrar">Criar Transação</a>
     </div>
 
 </div>
@@ -20,21 +21,45 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Descrição</th>
-                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Histórico</th>
+                    <th>Tipo Operração</th>
+                    <th>Plano Conta</th>
                     <th>#</th>
                     <th>#</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
+                @{
+                    foreach (var item in (List<TransacaoModel>)ViewBag.ListaTransacao)
+                    {
+
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Data</td>
+                            <td>@item.Valor</td>
+                            <td>@item.Historico</td>
+                            <td>@item.ItemPlanoConta.Tipo</td>
+                            <td>@item.ItemPlanoConta.Descricao</td>
+                            <td><button type="buttton" class="btn btn-success btn-sm" onclick="editar(@item.Id.ToString())">Editar</button></td>
+                            <td><button type="buttton" class="btn btn-danger btn-sm" onclick="excluir(@item.Id.ToString())">Excluir</button></td>
+                            <td></td>
+                        </tr>
+
+                    }
+                }
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    function editar(id){
+        window.location.href = "../Transacao/Cadastrar/" + id;
+    }
+
+    function excluir(id){
+        window.location.href = "../Transacao/Excluir/" + id;
+    }
+</script>

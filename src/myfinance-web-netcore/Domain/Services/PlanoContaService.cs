@@ -37,7 +37,6 @@ namespace myfinance_web_netcore.Domain.Services
             }
 
             return result;
-            //throw new NotImplementedException();
         }
 
         public void Salvar(PlanoContaModel model)

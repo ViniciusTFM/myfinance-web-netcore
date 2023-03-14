@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using myfinance_web_netcore.Models;
+using myfinance_web_netcore.Domain.Services;
+using myfinance_web_netcore.Domain.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace myfinance_web_netcore.Controllers
 {
@@ -13,30 +16,63 @@ namespace myfinance_web_netcore.Controllers
     public class TransacaoController : Controller
     {
         private readonly ILogger<TransacaoController> _logger;
+        private readonly ITransacaoService _transacaoService;
+        private readonly IPlanoContaService _planoContaService;
 
-        public TransacaoController(ILogger<TransacaoController> logger)
+        public TransacaoController(
+            ILogger<TransacaoController> logger,
+            ITransacaoService transacaoService,
+            IPlanoContaService planoContaService
+        )
         {
             _logger = logger;
+            _transacaoService = transacaoService;
+            _planoContaService = planoContaService;
         }
 
         [Route("Index")]
         public IActionResult Index()
         {
+            ViewBag.ListaTransacao = _transacaoService.ListarRegistros();
+
             return View();
         }
 
         [HttpGet]
         [Route("Cadastrar")]
-        public IActionResult Cadastrar()
+        [Route("Cadastrar/{id}")]
+        public IActionResult Cadastrar(int? id)
         {
-            return View();
+            var model = new TransacaoModel();
+
+            //model.PlanoConta = (IEnumerable<SelectListItem>)_planoContaService.ListarRegistros();
+            var lista = _planoContaService.ListarRegistros();
+            model.PlanoConta = new SelectList(lista, "Id", "Descricao");
+
+            //if (id != null)
+            //{
+            //var registro = _planoContaService.RetornarRegistro((int)id);
+            //return View(registro);
+            //}
+            return View(model);
         }
 
         [HttpPost]
         [Route("Cadastrar")]
+        [Route("Cadastrar/{id}")]
         public IActionResult Cadastrar(TransacaoModel Transacao)
         {
+            _transacaoService.Salvar(Transacao);
+            return RedirectToAction("Index");
             return View();
+        }
+
+        [HttpGet]
+        [Route("Excluir/{id}")]
+        public IActionResult Excluir(int id)
+        {
+            _transacaoService.Excluir(id);
+            return RedirectToAction("Index");
         }
     }
 }

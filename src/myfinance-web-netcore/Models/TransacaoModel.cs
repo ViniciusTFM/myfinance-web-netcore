@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using myfinance_web_netcore.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using myfinance_web_netcore.Domain.Entities;
 
 namespace myfinance_web_netcore.Models
 {
@@ -14,6 +15,7 @@ namespace myfinance_web_netcore.Models
         public decimal Valor { get; set; }
         public string? Historico { get; set; }
         public int PlanoContaId { get; set; }
+        public PlanoContaModel ItemPlanoConta { get; set; }
         public IEnumerable<SelectListItem>? PlanoConta { get; set; }
     }
 }
