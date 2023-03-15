@@ -63,7 +63,6 @@ namespace myfinance_web_netcore.Domain.Services
                 Valor = item.Valor,
                 Historico = item.Historico,
                 PlanoContaId = item.PlanoContaId,
-                PlanoConta = (IEnumerable<SelectListItem>)_planoContaService.ListarRegistros()
             };
 
             return itemPlanoConta;

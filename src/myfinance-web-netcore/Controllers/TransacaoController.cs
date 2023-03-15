@@ -45,15 +45,14 @@ namespace myfinance_web_netcore.Controllers
         {
             var model = new TransacaoModel();
 
-            //model.PlanoConta = (IEnumerable<SelectListItem>)_planoContaService.ListarRegistros();
+            if (id != null)
+            {
+                model = _transacaoService.RetornarRegistro((int)id);
+            }
+
             var lista = _planoContaService.ListarRegistros();
             model.PlanoConta = new SelectList(lista, "Id", "Descricao");
 
-            //if (id != null)
-            //{
-            //var registro = _planoContaService.RetornarRegistro((int)id);
-            //return View(registro);
-            //}
             return View(model);
         }
 
