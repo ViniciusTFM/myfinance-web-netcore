@@ -1,4 +1,7 @@
-Trabalho Grupo 3 
+MyFinance Web - Projeto de controle de finanças pessoais
+-
+Projeto Práticas de Implementação e Evolução de Software PUC Minas\
+Grupo 3 
 <ul>
   <li>Igor Eustáquio da Silva</li>
   <li>Raian Daniel de Mello</li>
@@ -6,10 +9,7 @@ Trabalho Grupo 3
   <li>Yohana dos Santos Alves </li>
 </ul>
 
-
-MyFinance Web - Projeto de controle de finanças pessoais
--
-Projeto Práticas de Implementação e Evolução de Software PUC Minas
+<hr>
 
 <p>
 O objetivo deste projeto é possibilitar que os usuários registrem suas entradas e saídas financeiras e analisem seus gastos, a fim de que o usuário realize um planejamento financeiro mais eficaz. Essa aplicação permitirá que o usuário crie um Plano de Contas personalizado para categorizar todas as transações, e também fornecerá um relatório detalhado das transações realizadas durante um determinado período.
@@ -75,7 +75,7 @@ Navegação
 <ul>
   <li>Tela de Plano de Contas</li>
 </ul>
-Essa tela permite criar, alterar, excluir e visualizar os planos de contas, informando uma descrição e o tipo (Receita ou Despesa):
+Essa tela permite criar, alterar, excluir e visualizar os planos de contas, informando uma descrição e o tipo (Receita ou Despesa). A opção excluir possui a implementação do Requisito Funcional Extra <b>RF101 – Tela de Exclusão</b>:
 
 ![image](https://user-images.githubusercontent.com/14062554/226212453-adb1d872-7cdc-493b-bd30-2aace290ce38.png)
 
@@ -88,7 +88,7 @@ Essa tela permite criar, alterar, excluir e visualizar os planos de contas, info
 <ul>
   <li>Tela de Transações</li>
 </ul>
-Por meio dessa tela, é possível criar, alterar, excluir e visualizar transações financeiras, inserindo informações como dados, valor e histórico, além de selecionar o plano de conta relacionado à transação:
+Por meio dessa tela, é possível criar, alterar, excluir e visualizar transações financeiras, inserindo informações como dados, valor e histórico, além de selecionar o plano de conta relacionado à transação. A opção excluir possui a implementação do Requisito Funcional Extra <b>RF101 – Tela de Exclusão</b>:
 
 ![image](https://user-images.githubusercontent.com/14062554/226212525-de0d4ef2-ec56-4f09-a68c-0499682f7f40.png)
 
