@@ -1,6 +1,14 @@
-# myfinance-web-netcore
+Trabalho Grupo 3 
+<ul>
+  <li>Igor Eustáquio da Silva</li>
+  <li>Raian Daniel de Mello</li>
+  <li>Vinicius Tadeu Ferreira Moreira</li>
+  <li>Yohana dos Santos Alves </li>
+</ul>
 
-MyFinance Web - Projeto de controle de finanças pessoais\
+
+MyFinance Web - Projeto de controle de finanças pessoais
+-
 Projeto Práticas de Implementação e Evolução de Software PUC Minas
 
 <p>
@@ -87,8 +95,6 @@ Por meio dessa tela, é possível criar, alterar, excluir e visualizar transaç�
 ![image](https://user-images.githubusercontent.com/14062554/226213048-6ed7bc0c-c883-4746-90c3-65231e6e52da.png)
 
 ![image](https://user-images.githubusercontent.com/14062554/226213121-012fa454-2c21-4dc0-9941-61905ade7996.png)
-
-
 
 
 </p>
