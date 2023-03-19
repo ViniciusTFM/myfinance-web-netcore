@@ -71,12 +71,24 @@ Essa tela permite criar, alterar, excluir e visualizar os planos de contas, info
 
 ![image](https://user-images.githubusercontent.com/14062554/226212453-adb1d872-7cdc-493b-bd30-2aace290ce38.png)
 
+![image](https://user-images.githubusercontent.com/14062554/226213039-d655b718-439c-49cc-8a23-39f677901daa.png)
+
+![image](https://user-images.githubusercontent.com/14062554/226213169-cafd4d55-fc59-43da-be74-35a727461c12.png)
+
+
+
 <ul>
   <li>Tela de Transações</li>
 </ul>
 Por meio dessa tela, é possível criar, alterar, excluir e visualizar transações financeiras, inserindo informações como dados, valor e histórico, além de selecionar o plano de conta relacionado à transação. Também é possível navegar para a tela de relatório:
 
 ![image](https://user-images.githubusercontent.com/14062554/226212525-de0d4ef2-ec56-4f09-a68c-0499682f7f40.png)
+
+![image](https://user-images.githubusercontent.com/14062554/226213048-6ed7bc0c-c883-4746-90c3-65231e6e52da.png)
+
+![image](https://user-images.githubusercontent.com/14062554/226213121-012fa454-2c21-4dc0-9941-61905ade7996.png)
+
+
 
 
 </p>
