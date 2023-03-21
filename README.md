@@ -27,7 +27,10 @@ Banco de dados
 -
 No projeto, foi utilizado o banco de dados relacional SQL Server, seguindo uma modelagem de dados apresentada:
 
-![image](https://user-images.githubusercontent.com/14062554/226212117-fc941816-e9b9-4df0-8234-efd620453a73.png)
+<!-- ![image](https://user-images.githubusercontent.com/14062554/226212117-fc941816-e9b9-4df0-8234-efd620453a73.png) -->
+
+![image](https://user-images.githubusercontent.com/14062554/226766048-e3c192a8-2786-456f-8922-eb8381f8ce8a.png)
+
 
 
 💻 Arquitetura
